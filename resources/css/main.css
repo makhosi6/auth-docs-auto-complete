@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@font-face {
+    font-family: 'Graphik';
+    src: url('./graphik/GraphikRegular.ttf');
+    src: url('./graphik/GraphikRegular.otf?#iefix') format('embedded-opentype'),
+        url('./graphik/GraphikRegular.ttf') format('truetype'),
+}
+
+
+* {
+
+    font-family: "Graphik", "Rubik", Arial, sans-serif !important;
+    box-shadow: none !important;
+}
+
+button.font-semibold, .font-semibold {
+    font-weight: normal !important;
+}
+
+*:not(img) {
+    border-radius: 0 !important;
+
+}
