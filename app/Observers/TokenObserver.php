@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Observers;
+
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
 
 use App\Models\Tokens as Token;
 
@@ -15,8 +17,16 @@ class TokenObserver
      */
     public function created(Token $token)
     {
-        //
-        Log::debug('Create the token'.$token);
+
+        try {
+            ///
+            $response = Http::withToken('token')->post('http://example.com/users', array($token));
+            //
+            Log::debug('\CREATE the token' . $token. "  STATUS = ".$response->status());
+        } catch (\Throwable $th) {
+
+            Log::debug('Error ==> ' . $th);
+        }
     }
 
     /**
@@ -28,7 +38,7 @@ class TokenObserver
     public function updated(Token $token)
     {
         //
-        Log::debug('Updating the token'.$token);
+        Log::debug('Updating the token' . $token);
     }
 
     /**
@@ -39,8 +49,16 @@ class TokenObserver
      */
     public function deleted(Token $token)
     {
-        //
-        Log::debug('Delete the token'.$token);
+        try {
+            //
+            ///
+            $response = Http::withToken('token')->delete('http://example.com/users/'.$token->key, array($token));
+
+            Log::debug('\DELETE the token' . $token . "  STATUS = ".$response->status());
+        } catch (\Throwable $th) {
+
+            Log::debug('Error ==> ' . $th);
+        }
     }
 
     /**
@@ -62,7 +80,15 @@ class TokenObserver
      */
     public function forceDeleted(Token $token)
     {
-        //
-        Log::debug('Delete the token -F '.$token);
+        try {
+            //
+            ///
+            $response = Http::withToken('token')->delete('http://example.com/users/'.$token->key, array($token));
+
+            Log::debug('\DELETE the token -F' . $token . "  STATUS = ".$response->status());
+        } catch (\Throwable $th) {
+
+            Log::debug('Error ==> ' . $th);
+        }
     }
 }

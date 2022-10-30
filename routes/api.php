@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\TokensController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  * /anaytics
  * 
  */
-Route::apiResource('analytics', AnalyticsController::class)->middleware('custom:middleware'); 
+Route::apiResource('analytics', AnalyticsController::class)->middleware('custom:middleware')->only([
+     'store', 'update', 'destroy','show'
+]); 
+/**
+ * /tokens
+ * 
+ */
+Route::apiResource('tokens', TokensController::class)->middleware('custom:middleware')->only([
+    'index', //'show'
+]); 
