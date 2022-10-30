@@ -20,7 +20,7 @@ class TokenObserver
 
         try {
             ///
-            $response = Http::withToken('token')->post('http://example.com/users', array($token));
+            $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->post('http://example.com/users', array($token));
             //
             Log::debug('\CREATE the token' . $token. "  STATUS = ".$response->status());
         } catch (\Throwable $th) {
@@ -52,7 +52,7 @@ class TokenObserver
         try {
             //
             ///
-            $response = Http::withToken('token')->delete('http://example.com/users/'.$token->key, array($token));
+            $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->delete('http://example.com/users/'.$token->key, array($token));
 
             Log::debug('\DELETE the token' . $token . "  STATUS = ".$response->status());
         } catch (\Throwable $th) {

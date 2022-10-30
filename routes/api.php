@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/whoami', function (Request $request) {
    
     return $request->user();
 });
@@ -27,13 +27,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  * /anaytics
  * 
  */
-Route::apiResource('analytics', AnalyticsController::class)->middleware('custom:middleware')->only([
+Route::apiResource('analytics', AnalyticsController::class)->only([
      'store', 'update', 'destroy','show'
-]); 
+])->middleware(['admins.only']);
 /**
  * /tokens
  * 
  */
-Route::apiResource('tokens', TokensController::class)->middleware('custom:middleware')->only([
-    'index', //'show'
-]); 
+Route::apiResource('tokens', TokensController::class)->only([
+    'index', 
+])->middleware(['admins.only']);
