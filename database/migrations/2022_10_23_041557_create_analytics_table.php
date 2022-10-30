@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('analytics', function (Blueprint $table) {
             $table->uuid('id');
+            $table->string('uuky')->nullable();
+            $table->string('token');
+            $table->string('ip');
+            $table->string('query')->nullable();
+            $table->string('hostname')->nullable();
+            $table->bigInteger('timestamp');
+            $table->string('params')->nullable();
+            $table->text('rawHeaders')->nullable();
+            $table->string('body')->nullable();
             $table->timestamps();
         });
     }

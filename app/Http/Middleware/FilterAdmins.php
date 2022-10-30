@@ -18,7 +18,7 @@ class FilterAdmins
     public function handle(Request $request, Closure $next)
     {
 
-        if ($request->bearerToken() !== env('ADMIN_TOKEN', 'uhu9ujii')) {
+        if ($request->bearerToken() !== env('ADMIN_TOKEN', rand(9 , 24) . "")) {
             abort(403);
         } 
 

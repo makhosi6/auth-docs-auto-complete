@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\Analytics;
 use Illuminate\Http\Request;
 
@@ -27,21 +28,27 @@ class AnalyticsController extends Controller
     {
 
         try {
-
+         
             //
             $analytics = Analytics::create([
+                // 'id' => rand(6, 16),
                 'uuky' => $request->uuky,
                 'token' => $request->token,
-                'ip' => $request->ip,
-                'query' => $request->query,
+                'ip' => $request->x_ip,
+                'query' => $request->x_query,
+                'hostname' => $request->x_hostname,
                 'timestamp' => $request->timestamp,
-                'params' => $request->params
+                'params' => $request->x_params,
+                'rawHeaders' => $request->x_rawHeaders,
+                'body' => $request->x_body
             ]);
 
             //
             $analytics->save();
         } catch (\Throwable $th) {
+            Log::debug('\ERROR FROM ANALYTICS CREATE' . $th);
             abort(500);
+       
         }
     }
 

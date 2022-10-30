@@ -20,7 +20,7 @@ class TokenObserver
 
         try {
             ///
-            $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->post('http://example.com/users', array($token));
+            $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->post(env('SERVICE_ONE','http://192.168.0.135:3001/secret/whitelist'), array($token));
             //
             Log::debug('\CREATE the token' . $token. "  STATUS = ".$response->status());
         } catch (\Throwable $th) {
@@ -52,7 +52,7 @@ class TokenObserver
         try {
             //
             ///
-            $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->delete('http://example.com/users/'.$token->key, array($token));
+            $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->delete(env('SERVICE_ONE','http://192.168.0.135:3001/secret/whitelist'), array($token));
 
             Log::debug('\DELETE the token' . $token . "  STATUS = ".$response->status());
         } catch (\Throwable $th) {
@@ -83,7 +83,7 @@ class TokenObserver
         try {
             //
             ///
-            $response = Http::withToken('token')->delete('http://example.com/users/'.$token->key, array($token));
+            $response = Http::withToken('token')->delete(env('SERVICE_ONE','http://192.168.0.135:3001/secret/whitelist'), array($token));
 
             Log::debug('\DELETE the token -F' . $token . "  STATUS = ".$response->status());
         } catch (\Throwable $th) {

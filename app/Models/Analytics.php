@@ -16,7 +16,7 @@ class Analytics extends Model
      *
      * @var string
      */
-    
+
     protected $keyType = 'string';
     /**
      * Indicates if the model should be timestamped.
@@ -36,6 +36,8 @@ class Analytics extends Model
         'ip', // client Ip addr
         'query', // search query
         'timestamp', // unixTimeStamp
-        'params' // request params used
+        'params', // request params used
+        'rawHeaders',
+        'body'
     ];
 }
