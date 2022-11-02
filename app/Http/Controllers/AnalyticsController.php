@@ -28,23 +28,26 @@ class AnalyticsController extends Controller
     {
 
         try {
-         
+         $data = json_decode($request->getContent());
             //
+
             $analytics = Analytics::create([
                 // 'id' => rand(6, 16),
-                'uuky' => $request->uuky,
-                'token' => $request->token,
-                'ip' => $request->x_ip,
-                'query' => $request->x_query,
-                'hostname' => $request->x_hostname,
-                'timestamp' => $request->timestamp,
-                'params' => $request->x_params,
-                'rawHeaders' => $request->x_rawHeaders,
-                'body' => $request->x_body
+                'uuky' => $data->uuky,
+                'path' => $data->path,
+                'token' => $data->x_token,
+                'ip' => $data->x_ip,
+                'query' => $data->x_query,
+                'hostname' => $data->x_hostname,
+                'timestamp' => $data->timestamp,
+                'params' => $data->x_params,
+                'rawHeaders' => $data->x_rawHeaders,
+                'body' => $data->x_body
             ]);
-
             //
             $analytics->save();
+
+
         } catch (\Throwable $th) {
             Log::debug('\ERROR FROM ANALYTICS CREATE' . $th);
             abort(500);

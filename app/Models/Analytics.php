@@ -31,6 +31,7 @@ class Analytics extends Model
      */
 
     protected $fillable = [
+        'path',
         'uuky', // unique public user key/id, Created by the User Model -- Will be used to access web pages
         'token', // auth token used
         'ip', // client Ip addr

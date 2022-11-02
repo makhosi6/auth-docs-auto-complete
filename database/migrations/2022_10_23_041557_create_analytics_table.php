@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('analytics', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('uuky')->nullable();
+            $table->string('path')->nullable();
             $table->string('token');
             $table->string('ip');
             $table->string('query')->nullable();
