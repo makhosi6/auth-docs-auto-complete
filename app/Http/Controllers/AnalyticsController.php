@@ -38,7 +38,7 @@ class AnalyticsController extends Controller
                 'token' => $data->x_token,
                 'ip' => $data->x_ip,
                 'query' => $data->x_query,
-                'hostname' => $data->x_hostname,
+                'hostname' => $data->x_hostname || $data->x_origin,
                 'timestamp' => $data->timestamp,
                 'params' => $data->x_params,
                 'rawHeaders' => $data->x_rawHeaders,

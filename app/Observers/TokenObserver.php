@@ -50,7 +50,6 @@ class TokenObserver
     public function deleted(Token $token)
     {
         try {
-            //
             ///
             $response = Http::withToken(env('ADMIN_TOKEN','bad-token'))->delete(env('SERVICE_ONE','http://192.168.0.135:3001/secret/whitelist'), array($token));
 
