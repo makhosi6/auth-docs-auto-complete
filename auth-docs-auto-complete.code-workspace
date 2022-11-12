@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "auth-docs-auto-complete",
+			"path": "."
+		}
+	],
+	"settings": {
+		"css.lint.unknownAtRules": "ignore",
+		"css.customData": [
+			"./css-data.json"
+		]
+	}
+}

@@ -1,6 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require('tailwindcss/colors');
-
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -21,24 +20,24 @@ module.exports = {
         colors: {
             ...colors,
             indigo: {
-                DEFAULT: '#29F294',
-                '50': '#D6FDEB',
-                '100': '#C3FBE1',
-                '200': '#9CF9CE',
-                '300': '#76F7BA',
-                '400': '#4FF4A7',
-                '500': '#29F294',
-                '600': '#0DD678',
-                '700': '#0AA15A',
-                '800': '#076C3D',
-                '900': '#03371F'
+                DEFAULT: "#5E17EB",
+                50: "#D3C0FA",
+                100: "#C6ADF8",
+                200: "#AC88F5",
+                300: "#9262F1",
+                400: "#783DEE",
+                500: "#5E17EB",
+                600: "#4910BA",
+                700: "#350C86",
+                800: "#200753",
+                900: "#0C031F",
             },
         },
     },
 
     plugins: [
         require("@tailwindcss/forms"),
-        require('tailwindcss/colors'),
+        require("tailwindcss/colors"),
         require("@tailwindcss/typography"),
     ],
 };

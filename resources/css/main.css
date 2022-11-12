@@ -6,7 +6,10 @@
         url('./graphik/GraphikRegular.ttf') format('truetype'),
 }
 
-
+*::selection {
+    color: darkslategray ;
+    background-color: #ac88f59e;
+}
 * {
 
     font-family: "Graphik", "Rubik", Arial, sans-serif !important;

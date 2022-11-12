@@ -3,7 +3,6 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build"
-        
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.11.0",
@@ -22,6 +21,9 @@
         "vue": "^3.2.31"
     },
     "dependencies": {
-        "@carbon/icons-vue": "^10.49.1"
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/vue-fontawesome": "^3.0.2",
+        "laravel-mix-vue-svgicon": "^3.0.1"
     }
 }
