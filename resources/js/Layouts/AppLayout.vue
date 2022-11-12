@@ -98,7 +98,10 @@ const logout = () => {
                     <div class="w-60">
                       <!-- Team Management -->
                       <template v-if="$page.props.jetstream.hasTeamFeatures">
-                        <div  style="background-color: aliceblue" class="block px-4 py-2 text-xs text-gray-400">
+                        <div
+                          style="background-color: aliceblue"
+                          class="block px-4 py-2 text-xs text-gray-400"
+                        >
                           Manage Team
                         </div>
 
@@ -157,7 +160,7 @@ const logout = () => {
 
               <!-- Settings Dropdown -->
               <div class="ml-3 relative">
-                <Dropdown align="right" width="48" >
+                <Dropdown align="right" width="48">
                   <template #trigger>
                     <button
                       v-if="$page.props.jetstream.managesProfilePhotos"
@@ -195,7 +198,10 @@ const logout = () => {
 
                   <template #content>
                     <!-- Account Management -->
-                    <div  style="background-color: aliceblue" class="block px-4 py-2 text-xs text-gray-400">
+                    <div
+                      style="background-color: aliceblue"
+                      class="block px-4 py-2 text-xs text-gray-400"
+                    >
                       Manage Account
                     </div>
 

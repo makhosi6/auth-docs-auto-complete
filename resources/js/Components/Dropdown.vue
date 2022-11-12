@@ -16,7 +16,7 @@ const props = defineProps({
   },
 });
 
-let open = ref(false);
+let open = ref(true);
 
 const closeOnEscape = (e) => {
   if (open.value && e.key === "Escape") {
@@ -67,9 +67,9 @@ const alignmentClasses = computed(() => {
         v-show="open"
         class="absolute z-50 mt-2 shadow-lg"
         :class="[widthClass, alignmentClasses]"
-        style="display: none"
         @click="open = false"
       >
+        <!-- style="display: none" -->
         <div class="ring-1 ring-black ring-opacity-5" :class="contentClasses">
           <slot name="content" />
         </div>
