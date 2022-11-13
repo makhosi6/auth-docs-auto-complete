@@ -18,6 +18,12 @@ const form = useForm({
 const submit = () => {
     form.post(route('password.email'));
 };
+//
+try {
+  gtag("event", "bs_forgot_password");
+} catch (error) {
+  console.log(error);
+}
 </script>
 
 <template>

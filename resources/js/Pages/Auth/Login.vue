@@ -27,6 +27,12 @@ const submit = () => {
         onFinish: () => form.reset('password'),
     });
 };
+     //
+     try {
+        gtag("event", "bs_login");
+      } catch (error) {
+        console.log(error);
+      }
 </script>
 
 <template>

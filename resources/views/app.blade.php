@@ -15,7 +15,18 @@
 
     <link rel="stylesheet" href="../">
     <!-- Scripts -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7KH7EFNN4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-G7KH7EFNN4');
+    </script>
 
     @routes
     @vite('resources/js/app.js')

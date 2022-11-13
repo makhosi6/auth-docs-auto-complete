@@ -12,6 +12,12 @@ const props = defineProps({
 const form = useForm();
 
 const submit = () => {
+  //
+  try {
+    gtag("event", "bs_resend_verification_link");
+  } catch (error) {
+    console.log(error);
+  }
   form.post(route("verification.send"));
 };
 

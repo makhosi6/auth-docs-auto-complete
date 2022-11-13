@@ -5,6 +5,11 @@ import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 defineProps({
     policy: String,
 });
+try {
+  gtag("event", "bs_privacy");
+} catch (error) {
+    console.log(error);
+}
 </script>
 
 <template>
