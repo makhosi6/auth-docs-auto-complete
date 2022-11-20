@@ -43,7 +43,8 @@ We collect information from you when you visit our service, register, place an o
 Any of the information we collect from you may be used in one of the following ways:
 
 -   To personalize your experience (your information helps us to better respond to your individual needs).
--   To improve our service (we continually strive to improve our service offerings based on the information and feedback we receive from you). - To improve customer service (your information helps us to more effectively respond to your customer service requests and support needs).
+-   To improve our service (we continually strive to improve our service offerings based on the information and feedback we receive from you).
+-   To improve customer service (your information helps us to more effectively respond to your customer service requests and support needs).
 
 ## When do we use customer information from third parties?
 
