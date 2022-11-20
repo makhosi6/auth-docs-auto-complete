@@ -75,7 +75,7 @@ trait HasProfilePhoto
             return mb_substr($segment, 0, 1);
         })->join(' '));
 
-        return 'https://ui-avatars.com/api/?name='.urlencode($name).'&color=783DEE&background=03371F';
+        return 'https://ui-avatars.com/api/?name='.urlencode($name).'&background=9262F1&color=fff'; //color=7F9CF5&background=EBF4FF
     }
 
     /**

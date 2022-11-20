@@ -34,13 +34,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-        @font-face {
-            font-family: 'Graphik';
-            src: url('/build/assets/GraphikRegular.ttf');
-            src: url('/build/assets/GraphikRegular.otf?#iefix') format('embedded-opentype'),
-                url('/build/assets/GraphikRegular.ttf') format('truetype'),
-        }
-
 
         * {
 
